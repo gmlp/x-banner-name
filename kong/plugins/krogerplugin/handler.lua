@@ -24,7 +24,7 @@ function plugin:access(plugin_conf)
 
   -- your custom code here
   string = ngx.req.get_headers()["Host"]
-  subdomain = string:match("([^.]+)")
+  subdomain = string:match("%.([^.]+)")
   ngx.req.set_header("X-Banner-Name", subdomain)
 
 end --]]
